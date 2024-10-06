@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love me or not?</title>
+    <style>
+        #yes{
+        transition: top 0.5s, left 0.5s;
+        padding: 6px 22px;
+        border: none;
+        background-color: greenyellow;
+        color: rgb(0, 0, 0);
+        border-radius: 14px;
+        cursor: pointer;
+        }
+        #no {
+            position: absolute;
+            left: 540px;
+            transition: top 0.5s, left 0.5s;
+            padding: 6px 22px;
+            border: none;
+            background-color: red;
+            color: white;
+            border-radius: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div id="container">
+            <div class="box">
+                <h1>Do You Love Me? 💓</h1>
+                <button onclick="alert('Alhamdulillah - Kobul, Kobul, Kobul')" id="yes">yes</button>
+                <button id="no">No</button>
+            </div>
+        </div>
+    </center>
+    <script>
+        const no = document.getElementById('no');
+        const moveTerget = () => {
+            const maxWidth = 400;
+            const maxHeight = 400;
+
+            const randomX = Math.floor((Math.random() * maxWidth));
+            const randomY = Math.floor((Math.random() * maxHeight));
+
+            no.style.left = randomX + 'px';
+            no.style.top = randomY + 'px';
+        }
+
+        no.addEventListener('mouseenter', () =>{
+            moveTerget();
+        })
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault(e);
+        }, false)
+        
+    </script>
+</body>
+</html>
